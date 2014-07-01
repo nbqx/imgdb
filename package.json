@@ -1,0 +1,26 @@
+{
+  "name": "imgdb",
+  "description": "leveldb-based easy blob database",
+  "version": "0.0.0",
+  "author": "nbqx",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nbqx/imgdb.git"
+  },
+  "homepage": "https://github.com/nbqx/imgdb",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "base64-stream": "^0.1.2",
+    "event-stream": "^3.1.5",
+    "level": "^0.18.0"
+  },
+  "devDependencies": {
+    "rimraf": "^2.2.8",
+    "tap-colorize": "^1.2.0",
+    "tape": "^2.13.1"
+  }
+}
