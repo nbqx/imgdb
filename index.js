@@ -27,15 +27,14 @@ imgdb.prototype.get = function(k){
   var self = this;
   var s = new require('stream').Readable();
   s._read = function(){};
-  var then = base64.decode();
   self.db.get(k,function(err,val){
     if(err){
-      return then.emit('error',err);
+      return s.emit('error',err);
     }
     s.push(val);
     s.push(null);
   });
-  return s.pipe(then)
+  return es.pipeline(s,base64.decode())
 };
 
 imgdb.prototype.del = function(k,next){
