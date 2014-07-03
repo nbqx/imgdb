@@ -37,6 +37,13 @@ test("get test",function(t){
   });
 });
 
+test("key not found",function(t){
+  db.get("aaa").on('error',function(err){
+    t.equal(err.name,"NotFoundError",'should be error');
+    t.end();
+  });
+});
+
 test("keys test",function(t){
   var moreKey = "002";
   fs.createReadStream(imgPath).pipe(db.put(moreKey)).on('end',function(){
